@@ -1,0 +1,18 @@
+This is a tool to dump audio registers in host memory space.
+
+Use the command to build the tool:
+$gcc -O2 -g -Wall -Werror sof_audio_dump.c -lpciaccess -o hdaudio_dump
+
+Please run this as root.
+
+Usage: ./hdaudio_dump [OPTIONS]...
+
+-h, --help              help
+-o, --output=FILE       set output file for binary dump
+
+Known issue: sometimes the data from mmio is invalid as 0xff.
+Workaround: Use aplay -l to check the sound devices at first and
+     then run this tool.
+
+
+This tool only supports Broxton/ApolloLake now, but it's easy to extend.
