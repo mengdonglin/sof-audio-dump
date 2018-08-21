@@ -1,0 +1,1 @@
+gcc -O2 -g -Wall -Werror sof_audio_dump.c -o sof_audio_dump
